@@ -1,0 +1,5 @@
+dist
+build
+migrations
+seeds
+node_modules
