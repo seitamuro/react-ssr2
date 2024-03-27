@@ -6,7 +6,9 @@
   "license": "ISC",
   "author": "",
   "scripts": {
+    "build": "pnpm --filter \"@react-ssr2/client\" run build",
     "prepare": "husky",
+    "start": "pnpm --filter \"@react-ssr2/server\" run start",
     "test": "pnpm exec lint-staged"
   },
   "lint-staged": {
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@seitamuro/configs": "github:seitamuro/configs#071f2978dbab7e1841e0446ed24c3127ae7bff1e",
+    "@types/node": "^20.11.30",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",

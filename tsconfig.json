@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "exactOptionalPropertyTypes": false,
     "jsx": "react-jsx",
     "lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
     "skipLibCheck": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "types": ["node"]
   },
   "exclude": ["**/dist", "**/node_modules"],
-  "extends": "@seitamuro/configs/tsconfig.json",
-  "include": ["workspaces"]
+  "include": ["workspaces"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
+    "transpileOnly": true
+  }
 }

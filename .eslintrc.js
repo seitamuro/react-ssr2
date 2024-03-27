@@ -1,32 +1,11 @@
 module.exports = {
-  extends: [require.resolve('@seitamuro/configs/eslint'), 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   rules: {
-    'import/order': [
-      'error',
-      {
-        alphabetize: {
-          order: 'asc',
-        },
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            group: 'internal',
-            pattern: '@wsh-2024/**',
-            position: 'after',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['builtin', 'object'],
-      },
-    ],
     'no-undefined': 'off',
-    'react/jsx-sort-props': [
-      'error',
-      {
-        reservedFirst: true,
-        shorthandFirst: true,
-      },
-    ],
     'react/jsx-uses-react': 'off',
     'react/prop-types': ['off'],
     'react/react-in-jsx-scope': 'off',
@@ -36,4 +15,13 @@ module.exports = {
       version: '18.2.0',
     },
   },
+  parserOptions: {
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'react'],
+  extends: ['plugin:@typescript-eslint/recommended'],
 };
